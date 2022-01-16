@@ -16,8 +16,7 @@ router.route('/')
         body('contact').isString(),
         body('group').isString(),
         body('valueCampaign').isInt(),
-        body('activeSponsor').isBoolean(),
-        sanitizeBody('description').whitelist(CONFIG.sanitize.alphabet + CONFIG.sanitize.numerical)
+        body('activeSponsor').isBoolean()
     ], SponsorController.create);
 
 router.route("/deactivate/:id")
