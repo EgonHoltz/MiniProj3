@@ -16,7 +16,7 @@ router.route('/')
         body('contact').isString(),
         body('birthDate').isISO8601(),
         body('yearSpecializationStart').isInt(),
-        body('animals.animal').isString()
+        body('animals.*.animal').isString()
     ], SpecialistController.create);
 
 router.route('/:id')
