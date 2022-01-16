@@ -6,11 +6,12 @@ module.exports = {
             question: 'questions',
             quiz: 'quizzes',
             user: 'users',
-            user_levels: "user_levels"
+            user_levels: "user_levels",
+            sponsor: "sponsors_utad76916",
         }
     },
     auth: {
-        expiration_time: 15000,
+        expiration_time: 9999999,
         issuer: "FCA"
     },
     sanitize: {
