@@ -18,12 +18,6 @@ router.route('/')
         body('yearSpecializationStart').isInt()
     ], SpecialistController.create);
 
-router.route("/deactivate/:id")
-    .put(AuthController.checkAuth, [param("id").isMongoId()], SpecialistController.deactivate);
-
-router.route("/activate/:id")
-    .put(AuthController.checkAuth, [param("id").isMongoId()], SpecialistController.activate);
-
 router.route('/:id')
     .get(AuthController.checkAuth, [param("id").isMongoId()], SpecialistController.getOne)
     .put(AuthController.checkAuth, [param("id").isMongoId()], SpecialistController.update)
