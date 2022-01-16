@@ -14,8 +14,9 @@ router.route('/')
     .post(AuthController.checkAuth, [
         body('name').isString(),
         body('contact').isString(),
-        body('group').isString(),
-        body('yearSpecializationStart').isInt()
+        body('birthDate').isISO8601(),
+        body('yearSpecializationStart').isInt(),
+        body('animals.animal').isString()
     ], SpecialistController.create);
 
 router.route('/:id')
