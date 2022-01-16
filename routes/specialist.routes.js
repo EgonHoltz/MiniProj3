@@ -23,5 +23,5 @@ router.route('/:id')
     .get(AuthController.checkAuth, [param("id").isMongoId()], SpecialistController.getOne)
     .put(AuthController.checkAuth, [param("id").isMongoId()], SpecialistController.update)
     .delete(AuthController.checkAuth, [param("id").isMongoId()], SpecialistController.delete);
-
+ 
 module.exports = router;
