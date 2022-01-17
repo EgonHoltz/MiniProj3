@@ -5,14 +5,15 @@ const CONFIG = require('../config/config');
 const specialistSchema = new Schema({
     name: String,
     contact: String,
-    birthDate: {
-        type: Date,
-        default: Date.now
-    },
+    birthDate: Date,
     yearSpecializationStart: Number,
     animals: [{
         animal: String
     }],
+    creationDate: {
+        type: Date,
+        default: Date.now
+    },
     evaluation: [{
         type: String,
         ref: CONFIG.mongodb.collections.user
