@@ -94,13 +94,13 @@ exports.getOne = (req, res) => {
 exports.activate = (req, res) => {
     const errors = validationResult(req).array();
     if (errors.length > 0) return res.status(406).send(errors);
-
+    actualDate = new Date;
     Sponsor.updateOne({
         _id: req.params.id
     }, {
         $set: {
             activeSponsor: true,
-            activationDate: Date.now
+            activationDate: actualDate
         }
     }, (error, result) => {
         if (error) throw error;
@@ -114,13 +114,13 @@ exports.activate = (req, res) => {
 exports.deactivate = (req, res) => {
     const errors = validationResult(req).array();
     if (errors.length > 0) return res.status(406).send(errors);
-
+    actualDate = new Date;
     Sponsor.updateOne({
         _id: req.params.id
     }, {
         $set: {
             activeSponsor: false,
-            endDate: Date.now
+            endDate: actualDate
         }
     }, (error, result) => {
         if (error) throw error;
