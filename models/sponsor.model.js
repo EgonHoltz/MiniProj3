@@ -16,8 +16,7 @@ const sponsorSchema = new Schema({
         default: Date.now
     },
     endDate: {
-        type: Date,
-        default: Date.now
+        type: Date
     },
     dtRegister: {
         type: Date,

@@ -99,7 +99,8 @@ exports.activate = (req, res) => {
         _id: req.params.id
     }, {
         $set: {
-            activeSponsor: true
+            activeSponsor: true,
+            activationDate: Date.now
         }
     }, (error, result) => {
         if (error) throw error;
@@ -118,7 +119,8 @@ exports.deactivate = (req, res) => {
         _id: req.params.id
     }, {
         $set: {
-            activeSponsor: false
+            activeSponsor: false,
+            endDate: Date.now
         }
     }, (error, result) => {
         if (error) throw error;
